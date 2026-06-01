@@ -45,3 +45,48 @@ main {
 .nav-links a:hover {
   text-decoration: underline;
 }
+
+.hero {
+  min-height: 70vh; /*Take up 70% of browser height*/
+  display: flex;
+  align-items: center;
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1.05; /*keeps the lines close together if the heading wraps*/
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.primary-button {
+  display: inline-block; /* <a> is inline, so let's it behave more like a button*/
+  padding: 0.85rem 1.2rem; /* space between text and button*/
+  border-radius: 999px; /*pill shape*/
+  background: #0f172a;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
+}
