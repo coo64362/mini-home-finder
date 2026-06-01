@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,4 +15,33 @@ body {
 
 main {
   padding: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.nav-links{
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none; /*removes the underline*/
+  font-weight: 600; /*makes the link slightly bold*/
+  color: #0f172a;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
 }
