@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <p>MiniHomeFinder</p>
             <p>Real estate listing app.</p>
         </footer>

@@ -9,11 +9,11 @@ function App() {
      <main>
       <Hero />
 
-      <section id="listings">
+      <section id="listings" className="section">
         <h2>Property Listings</h2>
       </section>
 
-      <section id="about">
+      <section id="about" className="section">
         <h2>About this app</h2>
       </section>
       
