@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import PropertyList from "./components/PropertyList";
+
 function App() {
   return (
     <>
@@ -9,9 +11,7 @@ function App() {
      <main>
       <Hero />
 
-      <section id="listings" className="section">
-        <h2>Property Listings</h2>
-      </section>
+      <PropertyList />
 
       <section id="about" className="section">
         <h2>About this app</h2>
