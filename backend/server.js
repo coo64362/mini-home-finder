@@ -16,6 +16,18 @@ app.get("/api/properties", (req, res) => {
     res.json(properties);
 });
 
+app.get("/api/properties/:id", (req,res) => {
+    const propertyId = Number(req.params.id);
+
+    const property = properties.find((property) => property.id === propertyId);
+
+    if(!property) {
+        return res.status(404).json({message: "Property not found"});
+    }
+
+    res.json(property);
+})
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
