@@ -26,7 +26,18 @@ app.get("/api/properties/:id", (req,res) => {
     }
 
     res.json(property);
-})
+});
+
+app.post("/api/properties", (req, res) => {
+    const newProperty = {
+        id: properties.length + 1,
+        ...req.body,
+    };
+
+    properties.push(newProperty);
+
+    res.status(201).json(newProperty);
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
