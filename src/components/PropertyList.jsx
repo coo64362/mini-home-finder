@@ -61,12 +61,15 @@ function PropertyList() {
                 />
             </div>
 
-
-            <div className="property-grid">
-                {filteredProperties.map((property) => (
-                    <PropertyCard key={property.id} property={property}/>
-                ))}
-            </div>
+            {filteredProperties.length === 0 ? (
+                <p className="empty-message">No properties match your search.</p>
+            ) : (
+                <div className="property-grid">
+                    {filteredProperties.map((property) => (
+                        <PropertyCard key={property.id} property={property}/>
+                    ))}
+                </div>
+            )}
         </section>
     );
 }
