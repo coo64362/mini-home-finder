@@ -4,14 +4,27 @@ import PropertyCard from "./PropertyCard";
 
 function PropertyList() {
     const [searchTerm, setSearchTerm] = useState("");
+    const [maxPrice, setMaxPrice] = useState("");
+    const [minBeds, setMinBeds] = useState("");
+    const [minBaths, setMinBaths] = useState("");
 
     const filteredProperties = properties.filter((property) => {
         const searchText = searchTerm.toLowerCase();
 
-        return (
+        const matchesSearch = 
             property.city.toLowerCase().includes(searchText) ||
-            property.zip.includes(searchText)
-        );
+            property.zip.includes(searchText);
+
+        const matchesPrice = 
+            maxPrice === "" || property.price <= Number(maxPrice);
+
+        const matchesBeds = 
+            minBeds === "" || property.beds >= Number(minBeds);
+
+        const matchesBaths = 
+            minBaths === "" || property.baths >= Number(minBaths);
+
+        return matchesSearch && matchesPrice && matchesBeds && matchesBaths;
     });
     return (
         <section id="listings" className="section">
@@ -24,6 +37,29 @@ function PropertyList() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
             />
+
+            <div className="filters">
+                <input
+                    type="number"
+                    placeholder="Max price"
+                    value={maxPrice}
+                    onChange={(event) => setMaxPrice(event.target.value)}
+                />
+
+                <input
+                    type="number"
+                    placeholder="Min beds"
+                    value={minBeds}
+                    onChange={(event) => setMinBeds(event.target.value)}
+                />
+
+                <input
+                    type="number"
+                    placeholder="Min Baths"
+                    value={minBaths}
+                    onChange={(event) => setMinBaths(event.target.value)}
+                />
+            </div>
 
 
             <div className="property-grid">
